@@ -1,0 +1,11 @@
+<p>
+  delivery-item works!
+</p>
+<div *ngFor="let deliveryDetail of delivery | keys" class="row">
+  <div class="col-lg-4">
+    {{deliveryDetail.key}}:
+  </div>
+  <div class="col-lg-7">
+    {{deliveryDetail.value}}
+  </div>
+</div>

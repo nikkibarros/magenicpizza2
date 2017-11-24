@@ -1,0 +1,17 @@
+<div *ngFor="let order of orders" class="row" style="margin: 4px auto">
+    <div class="col-lg-11" style="border: 1px solid">
+        <div>
+            {{order.item.pizza.name}} Pizza
+        </div>
+        <div>
+            <span *ngFor="let ingredient of order.item.pizza.ingredients">{{ingredient}}, </span>
+        </div>
+        <div>
+            <span>{{order.item.size.name}}</span>
+            <span class="pull-right">P {{order.item.size.price * order.quantity}}</span>
+        </div>
+    </div>
+    <div class="col-lg-1">
+        <input [(ngModel)]="order.quantity" placeholder="0">
+    </div>
+</div>

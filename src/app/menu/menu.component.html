@@ -1,0 +1,18 @@
+<div [ngClass]="{'overlay': disabled }">
+  <div style="text-align:center">
+    Menu
+  </div>
+  <div>
+    <app-menu-items (itemWasSelected)="selectItemHandler($event)"></app-menu-items>
+  </div>
+  <div>
+    <app-selected-menu-item [item]="selectedItem"></app-selected-menu-item>
+  </div>
+  <div *ngIf="selectedItem">
+      {{selectedItem.pizza.name}}
+      {{selectedItem.size.price}}
+  </div>
+  <div>
+      <button type="button" class="btn btn-primary" [disabled]="isBtnDisabled" (click)="addItem()">Add Pizza</button>
+  </div>
+</div>

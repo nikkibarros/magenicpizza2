@@ -1,0 +1,17 @@
+<div *ngIf="item">
+  
+  <div class="row">
+      <div class="col-lg-6">{{item.pizza.name}}</div>
+      <div class="col-lg-6">
+        <span class="pull-right">P {{item.size.price}}</span>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-6">
+        <ul class="list-group">
+          <li *ngFor="let ingredient of item.pizza.ingredients" class="list-group-item">{{ingredient}}</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">img here</div>
+  </div>
+</div>

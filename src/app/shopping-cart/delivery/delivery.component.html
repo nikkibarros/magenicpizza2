@@ -1,0 +1,74 @@
+<form #deliveryForm="ngForm">
+    <div class="form-group row">
+      <label for="firstName" class="col-lg-3 col-form-label">First Name</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="delivery.firstName" name="firstName" #firstName="ngModel">
+          <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+            First Name is required
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="lastName" class="col-lg-3 col-form-label">Last Name</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="lastName" required [(ngModel)]="delivery.lastName" name="lastName" #lastName="ngModel">
+          <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+            Last Name is required
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="emailAddress" class="col-lg-3 col-form-label">Email Address</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="emailAddress" required [(ngModel)]="delivery.emailAddress" name="emailAddress" #emailAddress="ngModel">
+          <div [hidden]="emailAddress.valid || emailAddress.pristine" class="alert alert-danger">
+            Email Address is required
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="contactNumber" class="col-lg-3 col-form-label">Contact Number</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="contactNumber" required [(ngModel)]="delivery.contactNumber" name="contactNumber" #contactNumber="ngModel">
+          <div [hidden]="contactNumber.valid || contactNumber.pristine" class="alert alert-danger">
+            Contact Number is required
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="street" class="col-lg-3 col-form-label">Street</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="street" required [(ngModel)]="delivery.street" name="street" #street="ngModel">
+          <div [hidden]="street.valid || street.pristine" class="alert alert-danger">
+            Street is required
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="city" class="col-lg-3 col-form-label">City</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="city" required [(ngModel)]="delivery.city" name="city" #city="ngModel">
+          <div [hidden]="city.valid || city.pristine" class="alert alert-danger">
+            City is required
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="zip" class="col-lg-3 col-form-label">Zip</label>
+      <div class="col-lg-9">
+          <input type="text" class="form-control" id="zip" required [(ngModel)]="delivery.zip" name="zip" #zip="ngModel">
+          <div [hidden]="zip.valid || zip.pristine" class="alert alert-danger">
+            Zip is required
+          </div>
+      </div>
+    </div>
+
+    <button type="submit" hidden>Submit</button>
+
+  </form>

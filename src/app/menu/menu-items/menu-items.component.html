@@ -1,0 +1,8 @@
+<div class="list-group distribute">
+  <button *ngFor="let menuPizza of menu.pizzas" type="button" class="list-group-item list-group-item-action" (click)="selectPizza(menuPizza)">{{menuPizza.name}}</button>
+</div>
+<div style="text-align:center">
+    <label *ngFor="let menuSize of menu.sizes" class="radio-inline">
+        <input type="radio" name="menuSize" [value]="menuSize.price" (change)="selectSize(menuSize)">{{menuSize.name}}
+    </label>
+</div>

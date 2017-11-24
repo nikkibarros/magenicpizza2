@@ -1,0 +1,20 @@
+<div *ngFor="let order of orders" class="row" style="margin: 4px auto">
+    <div class="col-lg-11" style="border: 1px solid">
+        <div>
+            {{order.item.pizza.name}} Pizza
+        </div>
+        <div>
+            <span *ngFor="let ingredient of order.item.pizza.ingredients">
+                <i>{{ingredient}}, </i>
+            </span>
+        </div>
+        <div>
+            <span>{{order.item.size.name}}</span>
+            <span class="pull-right">P {{order.item.size.price * order.quantity}}</span>
+            <span class="pull-right" style="margin: auto 10px">
+                <small>P {{order.item.size.price}} x {{order.quantity}}</small>
+            </span>
+        </div>
+    </div>
+
+</div>

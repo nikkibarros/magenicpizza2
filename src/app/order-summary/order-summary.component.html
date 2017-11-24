@@ -1,0 +1,14 @@
+<div>
+  <div style="text-align:center">
+    Order Summary
+  </div>
+  <div>
+    <app-ordered-item [orders]="orderSummary.orders"></app-ordered-item>
+  </div>
+  <div>
+    <app-delivery-item [delivery]="orderSummary.delivery"></app-delivery-item>
+  </div>
+  <div style="text-align:center">
+    <button type="button" class="btn btn-primary">Proceed To Payment</button>
+</div>
+</div>

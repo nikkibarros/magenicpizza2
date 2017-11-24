@@ -1,0 +1,12 @@
+.distribute {
+    margin: 10px auto 20px;
+    list-style-type: none;
+    padding: 0;
+    width: 90%;
+    -moz-column-gap: 20;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20;
+    column-count: 3;
+    column-gap: 20;
+}
