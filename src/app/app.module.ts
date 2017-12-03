@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -45,7 +47,9 @@ import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-
     BrowserModule,
     NoopAnimationsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [MenuService, MiddlemanService],
   bootstrap: [AppComponent],
