@@ -2,7 +2,7 @@ import { CartItemConfirmRemoveDialogComponent } from './../cart-item-confirm-rem
 
 import { Order } from './../../models/order';
 import { Item } from './../../models/item';
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, EventEmitter, Output } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -12,7 +12,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class CartItemComponent implements OnInit {
   @Input() orders: Order[];
-
+  @Output() changedOrders: EventEmitter<Order[]> = new EventEmitter();
 
   constructor(public dialog: MatDialog) { }
 
@@ -31,6 +31,7 @@ export class CartItemComponent implements OnInit {
       if (result) {
         const i = this.orders.indexOf(e);
         this.orders.splice(i, 1);
+        this.changedOrders.emit(this.orders);
       }
     });
   }
