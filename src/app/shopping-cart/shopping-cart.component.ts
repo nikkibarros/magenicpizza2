@@ -85,4 +85,9 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     ); */
   }
 
+  changedOrdersHandler(e: Order[]) {
+    this.orders = e;
+    this.hasItems = this.orders.length > 0;
+  }
+
 }

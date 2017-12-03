@@ -3,7 +3,7 @@
         Shopping Cart
     </div>
     <div>
-        <app-cart-item [orders]="orders"></app-cart-item>
+        <app-cart-item [orders]="orders" (changedOrders)="changedOrdersHandler($event)"></app-cart-item>
     </div>
     <div>
         <app-delivery (deliveryValid)="deliveryValidHandler($event)"></app-delivery>
