@@ -2,6 +2,7 @@
     <div class="col-lg-11" style="border: 1px solid">
         <div>
             {{order.item.pizza.name}} Pizza
+            <i class="fa fa-times fa-pull-right" style="cursor: pointer" (click)="showConfirmRemove(order)"></i>
         </div>
         <div>
             <span *ngFor="let ingredient of order.item.pizza.ingredients">{{ingredient}}, </span>

@@ -1,7 +1,9 @@
 
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -19,6 +21,8 @@ import { OrderedItemComponent } from './order-summary/ordered-item/ordered-item.
 import { DeliveryItemComponent } from './order-summary/delivery-item/delivery-item.component';
 import { KeysPipe } from './pipes/keys.pipe';
 import { SentenceCasePipe } from './pipes/sentence-case.pipe';
+// tslint:disable-next-line:max-line-length
+import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-confirm-remove-dialog/cart-item-confirm-remove-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +38,19 @@ import { SentenceCasePipe } from './pipes/sentence-case.pipe';
     OrderedItemComponent,
     DeliveryItemComponent,
     KeysPipe,
-    SentenceCasePipe
+    SentenceCasePipe,
+    CartItemConfirmRemoveDialogComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    NoopAnimationsModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [MenuService, MiddlemanService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CartItemConfirmRemoveDialogComponent
+  ]
 })
 export class AppModule { }

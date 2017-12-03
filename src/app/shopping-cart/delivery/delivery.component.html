@@ -22,7 +22,7 @@
     <div class="form-group row">
       <label for="emailAddress" class="col-lg-3 col-form-label">Email Address</label>
       <div class="col-lg-9">
-          <input type="text" class="form-control" id="emailAddress" required [(ngModel)]="delivery.emailAddress" name="emailAddress" #emailAddress="ngModel">
+          <input type="email" class="form-control" id="emailAddress" required email [(ngModel)]="delivery.emailAddress" name="emailAddress" #emailAddress="ngModel">
           <div [hidden]="emailAddress.valid || emailAddress.pristine" class="alert alert-danger">
             Email Address is required
           </div>
