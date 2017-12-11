@@ -28,6 +28,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   isBtnDisabled = false;
   deliveryInvalid = false;
   delivery: Delivery;
+  detailsValid: boolean;
 
   constructor(private middlemanService: MiddlemanService) { }
 
@@ -78,7 +79,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   orderNow(): void {
-    if (this.delivery) {
+    if (this.detailsValid) {
       this.isAtOrderSummary.emit(
         new OrderSummary(this.orders, this.delivery)
       );
@@ -93,6 +94,10 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   changedOrdersHandler(e: Order[]) {
     this.orders = e;
     this.hasItems = this.orders.length > 0;
+  }
+
+  detailsValidHandler(e: boolean) {
+    this.detailsValid = e;
   }
 
 }

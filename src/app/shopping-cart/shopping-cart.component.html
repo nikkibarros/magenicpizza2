@@ -6,7 +6,7 @@
         <app-cart-item [orders]="orders" (changedOrders)="changedOrdersHandler($event)"></app-cart-item>
     </div>
     <div>
-        <app-delivery (deliveryValid)="deliveryValidHandler($event)" [showErrors]="deliveryInvalid"></app-delivery>
+        <app-delivery (details)="deliveryValidHandler($event)" (detailsValid)="detailsValidHandler($event)" [showErrors]="deliveryInvalid"></app-delivery>
     </div>
     <div style="text-align:center">
         <button type="button" class="btn btn-primary" [disabled]="isBtnDisabled" (click)="orderNow()">Order Now</button>

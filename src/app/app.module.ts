@@ -55,6 +55,7 @@ import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-
   bootstrap: [AppComponent],
   entryComponents: [
     CartItemConfirmRemoveDialogComponent
-  ]
+  ],
+  exports: []
 })
 export class AppModule { }

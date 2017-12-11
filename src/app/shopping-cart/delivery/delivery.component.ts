@@ -13,7 +13,8 @@ import { NgForm } from '@angular/forms';
 })
 export class DeliveryComponent implements OnInit, AfterViewChecked {
   delivery: Delivery = new Delivery([], '', '', '', '', '', '', '');
-  @Output() deliveryValid: EventEmitter<Delivery> = new EventEmitter();
+  @Output() details: EventEmitter<Delivery> = new EventEmitter();
+  @Output() detailsValid: EventEmitter<boolean> = new EventEmitter();
   @Input() showErrors: boolean;
   @ViewChild('deliveryForm') currentForm: NgForm;
   myForm: NgForm;
@@ -32,9 +33,10 @@ export class DeliveryComponent implements OnInit, AfterViewChecked {
 
   onValueChanged(): void {
     if (this.myForm.valid) {
-      this.deliveryValid.emit(this.delivery);
+      this.details.emit(this.delivery);
     }
 
+    this.detailsValid.emit(this.myForm.valid);
   }
 
   formChange() {
