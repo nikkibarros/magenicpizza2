@@ -16,21 +16,24 @@
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="email" placeholder="Email Address" id="emailAddress" required email [(ngModel)]="delivery.emailAddress" name="emailAddress" #emailAddress="ngModel">
-          <mat-error *ngIf="emailAddress.invalid && showErrors">Email Address is required</mat-error>
+          <mat-error *ngIf="emailAddress.errors?.required && showErrors">Email Address is required</mat-error>
+          <mat-error *ngIf="emailAddress.errors?.email && showErrors">Not a valid email</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" hintLabel="(000) 0000 000">
           <input matInput type="text" placeholder="Contact Number" id="contactNumber" required phoneFormat="^\([0-9]{3}\) [0-9]{4} [0-9]{3}$" [(ngModel)]="delivery.contactNumber" name="contactNumber" #contactNumber="ngModel">
-          <mat-error *ngIf="contactNumber.invalid && showErrors">Contact Number is required</mat-error>
+          <mat-error *ngIf="contactNumber.errors?.required && showErrors">Contact Number is required</mat-error>
+          <mat-error *ngIf="contactNumber.errors?.phoneFormat && showErrors">Not in valid format</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="Street" id="street" required pattern="^[0-9]+ [A-Za-z ]+$" [(ngModel)]="delivery.street" name="street" #street="ngModel">
-          <mat-error *ngIf="street.invalid && showErrors">Street is required</mat-error>
+          <mat-error *ngIf="street.errors?.required && showErrors">Street is required</mat-error>
+          <mat-error *ngIf="street.errors?.pattern && showErrors">Not in valid format</mat-error>
         </mat-form-field>
     </div>
     
@@ -42,9 +45,11 @@
     </div>
     
     <div class="row">
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" hintLabel="XX00 0XX">
           <input matInput type="text" placeholder="Zip" id="zip" required zipValue zipFormat="^[A-Z][A-Z][0-9][0-9] [0-9][A-Z][A-Z]$" [(ngModel)]="delivery.zip" name="zip" #zip="ngModel">
-          <mat-error *ngIf="zip.invalid && showErrors">Zip is required</mat-error>
+          <mat-error *ngIf="zip.errors?.required && showErrors">Zip is required</mat-error>
+          <mat-error *ngIf="zip.errors?.zipValue && showErrors">Not a valid value</mat-error>
+          <mat-error *ngIf="zip.errors?.zipFormat && showErrors">Not in valid format</mat-error>
         </mat-form-field>
     </div>
 
