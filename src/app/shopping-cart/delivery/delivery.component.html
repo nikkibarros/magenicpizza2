@@ -2,49 +2,49 @@
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="First Name" id="firstName" required [(ngModel)]="delivery.firstName" name="firstName" #firstName="ngModel">
-          <mat-error *ngIf="firstName.invalid || !firstName.pristine">First Name is required</mat-error>
+          <mat-error *ngIf="firstName.invalid && showErrors">First Name is required</mat-error>
         </mat-form-field>
     </div>
 
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="Last Name" id="lastName" required [(ngModel)]="delivery.lastName" name="lastName" #lastName="ngModel">
-          <mat-error *ngIf="lastName.invalid || !lastName.pristine">Last Name is required</mat-error>
+          <mat-error *ngIf="lastName.invalid && showErrors">Last Name is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="email" placeholder="Email Address" id="emailAddress" required email [(ngModel)]="delivery.emailAddress" name="emailAddress" #emailAddress="ngModel">
-          <mat-error *ngIf="emailAddress.invalid || !emailAddress.pristine">Email Address is required</mat-error>
+          <mat-error *ngIf="emailAddress.invalid && showErrors">Email Address is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="Contact Number" id="contactNumber" required [(ngModel)]="delivery.contactNumber" name="contactNumber" #contactNumber="ngModel">
-          <mat-error *ngIf="contactNumber.invalid || !contactNumber.pristine">Contact Number is required</mat-error>
+          <mat-error *ngIf="contactNumber.invalid && showErrors">Contact Number is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="Street" id="street" required [(ngModel)]="delivery.street" name="street" #street="ngModel">
-          <mat-error *ngIf="street.invalid || !street.pristine">Street is required</mat-error>
+          <mat-error *ngIf="street.invalid && showErrors">Street is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="City" id="city" required [(ngModel)]="delivery.city" name="city" #city="ngModel">
-          <mat-error *ngIf="city.invalid || !city.pristine">City is required</mat-error>
+          <mat-error *ngIf="city.invalid && showErrors">City is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
           <input matInput type="text" placeholder="Zip" id="zip" required [(ngModel)]="delivery.zip" name="zip" #zip="ngModel">
-          <mat-error *ngIf="zip.invalid || !zip.pristine">Zip is required</mat-error>
+          <mat-error *ngIf="zip.invalid && showErrors">Zip is required</mat-error>
         </mat-form-field>
     </div>
 

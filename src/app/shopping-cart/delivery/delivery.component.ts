@@ -1,7 +1,7 @@
 
 import { Delivery } from './../../models/delivery';
 
-import { Component, OnInit, Output, EventEmitter, AfterViewChecked, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, AfterViewChecked, ViewChild, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -14,6 +14,7 @@ import { NgForm } from '@angular/forms';
 export class DeliveryComponent implements OnInit, AfterViewChecked {
   delivery: Delivery = new Delivery([], '', '', '', '', '', '', '');
   @Output() deliveryValid: EventEmitter<Delivery> = new EventEmitter();
+  @Input() showErrors: boolean;
   @ViewChild('deliveryForm') currentForm: NgForm;
   myForm: NgForm;
 
