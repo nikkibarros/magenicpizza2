@@ -22,14 +22,14 @@
     
     <div class="row">
         <mat-form-field class="full-width">
-          <input matInput type="text" placeholder="Contact Number" id="contactNumber" required [(ngModel)]="delivery.contactNumber" name="contactNumber" #contactNumber="ngModel">
+          <input matInput type="text" placeholder="Contact Number" id="contactNumber" required phoneFormat="^\([0-9]{3}\) [0-9]{4} [0-9]{3}$" [(ngModel)]="delivery.contactNumber" name="contactNumber" #contactNumber="ngModel">
           <mat-error *ngIf="contactNumber.invalid && showErrors">Contact Number is required</mat-error>
         </mat-form-field>
     </div>
     
     <div class="row">
         <mat-form-field class="full-width">
-          <input matInput type="text" placeholder="Street" id="street" required [(ngModel)]="delivery.street" name="street" #street="ngModel">
+          <input matInput type="text" placeholder="Street" id="street" required pattern="^[0-9]+ [A-Za-z ]+$" [(ngModel)]="delivery.street" name="street" #street="ngModel">
           <mat-error *ngIf="street.invalid && showErrors">Street is required</mat-error>
         </mat-form-field>
     </div>
@@ -43,7 +43,7 @@
     
     <div class="row">
         <mat-form-field class="full-width">
-          <input matInput type="text" placeholder="Zip" id="zip" required [(ngModel)]="delivery.zip" name="zip" #zip="ngModel">
+          <input matInput type="text" placeholder="Zip" id="zip" required zipValue zipFormat="^[A-Z][A-Z][0-9][0-9] [0-9][A-Z][A-Z]$" [(ngModel)]="delivery.zip" name="zip" #zip="ngModel">
           <mat-error *ngIf="zip.invalid && showErrors">Zip is required</mat-error>
         </mat-form-field>
     </div>

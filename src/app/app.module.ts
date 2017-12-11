@@ -25,6 +25,10 @@ import { KeysPipe } from './pipes/keys.pipe';
 import { SentenceCasePipe } from './pipes/sentence-case.pipe';
 // tslint:disable-next-line:max-line-length
 import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-confirm-remove-dialog/cart-item-confirm-remove-dialog.component';
+import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
+import { PhoneFormatDirective } from './directives/phone-format.directive';
+import { ZipValueDirective } from './directives/zip-value.directive';
+import { ZipFormatDirective } from './directives/zip-format.directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-
     DeliveryItemComponent,
     KeysPipe,
     SentenceCasePipe,
-    CartItemConfirmRemoveDialogComponent
+    CartItemConfirmRemoveDialogComponent,
+    ForbiddenNameDirective,
+    PhoneFormatDirective,
+    ZipValueDirective,
+    ZipFormatDirective
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,6 @@ import { CartItemConfirmRemoveDialogComponent } from './shopping-cart/cart-item-
   bootstrap: [AppComponent],
   entryComponents: [
     CartItemConfirmRemoveDialogComponent
-  ],
-  exports: []
+  ]
 })
 export class AppModule { }

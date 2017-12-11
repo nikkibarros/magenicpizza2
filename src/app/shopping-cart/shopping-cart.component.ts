@@ -28,7 +28,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   isBtnDisabled = false;
   deliveryInvalid = false;
   delivery: Delivery;
-  detailsValid: boolean;
+  detailsValid = false;
 
   constructor(private middlemanService: MiddlemanService) { }
 
